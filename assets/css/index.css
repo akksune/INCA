@@ -1,0 +1,50 @@
+*{
+   font-family: 'courier new'; 
+}
+
+header *{
+    display: inline-block;
+}
+header{
+    background-color: #5fb463;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right:0 ;
+    height: 80px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+}
+
+header li{
+    margin: 30px;
+}
+
+header li a{
+    text-decoration: none;
+    color: #270b0b;
+}
+
+li a:hover{
+    color: #a17070;
+}
+body {
+    margin: 0;
+}
+
+h1{
+    margin-top: 175px;
+    text-align: center;
+    font-size: 100px;
+    letter-spacing: 10px;
+    font-weight: 700;
+}
+.welcome{
+    margin-left: 200px;
+    margin-right: 200px;
+    font-size: 20px;
+    align-items: center;
+    text-align: justify;
+    text-indent: 35px;
+}
