@@ -31,6 +31,7 @@ li a:hover{
 }
 body {
     margin: 0;
+    background-color: #e5dad0;
 }
 
 h1{
@@ -47,4 +48,11 @@ h1{
     align-items: center;
     text-align: justify;
     text-indent: 35px;
+    background-color: #a9b4a4;
+    border: 2px solid #a9b4a4;
+    border-radius: 12px;
+    padding: 5px;
 }
+
+
+
