@@ -16,18 +16,19 @@ header{
     display: flex;
     align-items: center;
 }
-
-header li{
-    margin: 30px;
+header ul{
+    margin-left: 130px ;
 }
-
+header li{
+    margin: 50px;
+}
 header li a{
     text-decoration: none;
     color: #270b0b;
 }
 
 li a:hover{
-    color: #a17070;
+    color: #ebc1a5;
 }
 body {
     margin: 0;
