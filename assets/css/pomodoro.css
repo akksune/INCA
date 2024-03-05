@@ -4,14 +4,14 @@
 header{
     background-color: #b68868;
     height: 50px;
-    margin-top: -20px;
+    margin: 0;
     top: 0;
     left: 0;
-    right:0 ;
-    padding: 0;
+    right: 0;
     position: sticky;
-    justify-content: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
 } 
     header ul{
         text-decoration: none;
