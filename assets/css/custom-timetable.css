@@ -11,6 +11,11 @@ nav{
     background-color: #6c462d;
     border-radius: 10px;
 }
+#active{
+    color: #f5f0ee;
+    background-color: #6c462d;
+    border-radius: 10px;
+}
 body{
     background-color: #f8efe6;
 }
@@ -19,8 +24,6 @@ body{
     margin-bottom: 45px;
     width:400px ;
     height: 500px;
-    min-width: 30px;
-    min-height: 50px;
 }
 .inca-intro{
     margin-left:300px ;
