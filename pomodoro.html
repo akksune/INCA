@@ -6,28 +6,222 @@
     <title>Pomodoro</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm justify-content-center">
-      <ul class="navbar-nav">
-        <li class="nav-item px-5">
-          <a class="nav-link" id="active" href="pomodoro.html">Pomodoro</a>
-        </li>
-        <li class="nav-item px-5">
-          <a class="nav-link" href="flashcard.html">Flashcards</a>
-        </li>
-        <li class="nav-item px-5">
-          <a class="nav-link" href="timetable.html">Timetable</a>
-        </li>
-        <li class="nav-item px-5">
-          <a class="nav-link" href="notes.html">Notes</a>
-        </li>
-        <li class="nav-item px-5">
-          <a class="nav-link" href="ambience.html">Ambience</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="container">
+      <header
+        class="d-flex flex-md-row flex-wrap justify-content-center border-bottom"
+      >
+        <a
+          href="index.html"
+          class="d-flex align-items-center text-decoration-none me-md-auto"
+        >
+          <h2 id="header-name"><i class="bi bi-bootstrap-fill"></i>INCA</h2>
+        </a>
+        <ul class="nav nav-pills m-sm-2">
+          <li class="nav-item">
+            <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Flashcards</a>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link">Timetable</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <section class="content">
+      
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          $(".txtb").on("keyup", function (e) {
+            if (e.keyCode == 13 && $(".txtb").val() != "") {
+              var task = $("<div class='task'></div>").text($(".txtb").val());
+
+              var del = $("<i class='fas fa-trash-alt'></div>").click(
+                function () {
+                  var p = $(this).parent();
+                  p.fadeOut(function () {
+                    p.remove();
+                  });
+                }
+              );
+
+              var check = $("<i class='fas fa-check'></div>").click(
+                function () {
+                  var p = $(this).parent();
+                  p.fadeOut(function () {
+                    $(".comp").append(p);
+                    p.fadeIn();
+                  });
+                  $(this).remove();
+                }
+              );
+
+              task.append(del, check);
+              $(".notcomp").append(task);
+
+              $(".txtb").val("");
+            }
+          });
+        </script>
+      </div>
+
+      <div class="middle">
+        <img src="assets/image.PNG" alt="library sketch" class="illustration" />
+      </div>
+
+      <div class="right">
+        <div class="massPause">
+          <p id="pauseNotice">Pause all &nbsp;</p>
+          <input type="checkbox" id="pauseAll" onclick="pauseAll()" />
+        </div>
+        <div class="audio unpressed">
+          <span>
+            <p>Rainy Weather &nbsp;</p>
+            <button id="play-0" onclick="playSound(0)"></button>
+          </span>
+          <audio loop id="0">
+            <source src="assets/rain.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(0, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Sunny Weather &nbsp;</p>
+            <button id="play-5" onclick="playSound(5)"></button>
+          </span>
+          <audio loop id="5">
+            <source src="assets/css/bogshbogsgh.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(5, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Turning Pages &nbsp;</p>
+            <button id="play-1" onclick="playSound(1)"></button>
+          </span>
+          <audio loop id="1">
+            <source src="assets/pages.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(1, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Writing On iPad &nbsp;</p>
+            <button id="play-2" onclick="playSound(2)"></button>
+          </span>
+          <audio loop id="2">
+            <source src="assets/ipad.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(2, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Fireplace Crackling &nbsp;</p>
+            <button id="play-3" onclick="playSound(3)"></button>
+          </span>
+          <audio loop id="3">
+            <source src="assets/fireplace.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(3, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Typing on Keyboard &nbsp;</p>
+            <button id="play-4" onclick="playSound(4)"></button>
+          </span>
+          <audio loop id="4">
+            <source src="assets/typing.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(4, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
