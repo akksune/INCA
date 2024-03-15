@@ -1,3 +1,6 @@
+header {
+  background-color: #f8efe6;
+}
 #header-name {
   color: #6c462d;
   transition: all 0.8s ease 0s;
@@ -25,6 +28,8 @@
 }
 body {
   background-color: #f8efe6;
+  background-image: url("tumblr_bb52491bb4001d07c4f7542c44649f8a_8439d312_540.gif");
+  background-repeat: no-repeat;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -38,10 +43,4 @@ body {
   padding-right: 200px;
   text-indent: 50px;
   text-align: justify;
-}
-#gif {
-  background-image: url("assets/imgs/sleepy-cat.gif");
-  background-position: center;
-  background-size: cover;
-  overflow: hidden;
 }
