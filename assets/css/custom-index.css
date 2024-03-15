@@ -39,3 +39,9 @@ body {
   text-indent: 50px;
   text-align: justify;
 }
+#gif {
+  background-image: url("assets/imgs/sleepy-cat.gif");
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
