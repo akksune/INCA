@@ -9,26 +9,25 @@
 	<link rel="stylesheet" href="assets/css/custom-timetable.css" />
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
 <body>
-	<nav class="navbar navbar-expand-sm justify-content-center">
-		<ul class="navbar-nav">
-			<li class="nav-item px-5">
-				<a class="nav-link" href="pomodoro.html">Pomodoro</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="flashcard.html">Flashcards</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" id="active" href="timetable.html">Timetable</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="notes.html">Notes</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="ambience.html">Ambience</a>
-			</li>
-		</ul>
-	</nav>
+	<header>
+		<h1>Task Scheduler</h1>
+	</header>
+	<main>
+		<div class="task-from">
+			<input type="text" placeholder="Enter task">
+			<select id="priority">
+				<option value="top">Top Priority</option>
+				<option value="middle">Middle Priority</option>
+				<option value="low">Low Priority</option>
+			</select>
+			<input type="date" id="deadline">
+            <button id="add-task">Add Task</button>
+        </div>
+        <div class="task-list" id="task-list">
+        </div>
+        <script src="logic.js"></script>
+		</div>
+	</main>
 </body>
 </html>
