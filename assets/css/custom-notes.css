@@ -1,0 +1,46 @@
+header {
+  background-color: #f8efe6;
+}
+#header-name {
+  color: #6c462d;
+  transition: all 0.8s ease 0s;
+}
+#header-name:hover {
+  font-size: 40px;
+}
+.nav-link {
+  color: #6c462d;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 6px;
+  transition: all 0.8s ease 0s;
+}
+.nav-link:hover {
+  color: #f5f0ee;
+  background-color: #6c462d;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+}
+#inca {
+  padding-right: 80px;
+}
+body {
+  background-color: #f8efe6;
+  /*background-image: url("tumblr_bb52491bb4001d07c4f7542c44649f8a_8439d312_540.gif");*/
+  background-repeat: no-repeat;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0;
+}
+#logo {
+  padding-top: 80px;
+  width: 15%;
+  padding-bottom: 15px;
+}
+.inca-intro {
+  padding-left: 200px;
+  padding-right: 200px;
+  text-indent: 50px;
+  text-align: justify;
+}
