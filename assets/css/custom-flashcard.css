@@ -1,3 +1,36 @@
+header {
+  background-color: #f8efe6 !important;
+}
+
+#header-name {
+  color: #6c462d !important;
+  transition: all 0.8s ease 0s !important;
+}
+
+#header-name:hover {
+  font-size: 40px !important;
+}
+
+.nav-link {
+  color: #6c462d !important;
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+  border-radius: 6px !important;
+  transition: all 0.8s ease 0s !important;
+}
+
+.nav-link:hover {
+  color: #f5f0ee !important;
+  background-color: #6c462d !important;
+  border-radius: 50px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+body {
+  background-color: #f8efe6 !important;
+  margin: auto;
+}
 .flashcard {
   width: 90vw;
   max-width: 62.5em;
@@ -153,47 +186,4 @@ textarea:focus {
 }
 .hide {
   display: none;
-}
-@media screen and (max-width: 800px) {
-  .card-list-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.8em;
-  }
-}
-@media screen and (max-width: 450px) {
-  body {
-    font-size: 14px;
-  }
-  .card-list-container {
-    grid-template-columns: 1fr;
-    gap: 1.2em;
-  }
-}
-header {
-  background-color: #f8efe6;
-}
-#header-name {
-  color: #6c462d;
-  transition: all 0.8s ease 0s;
-}
-#header-name:hover {
-  font-size: 40px;
-}
-.nav-link {
-  color: #6c462d;
-  margin-left: 8px;
-  margin-right: 8px;
-  border-radius: 6px;
-  transition: all 0.8s ease 0s;
-}
-.nav-link:hover {
-  color: #f5f0ee;
-  background-color: #6c462d;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
-}
-body {
-  background-color: #f8efe6;
-  margin: 0;
 }
