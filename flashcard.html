@@ -1,34 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcard</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/custom-flashcard.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-md-row flex-wrap justify-content-center border-bottom"
+      >
+        <a
+          href="index.html"
+          class="d-flex align-items-center text-decoration-none me-md-auto"
+        >
+          <h2 id="header-name"><i class="bi bi-bootstrap-fill"></i>INCA</h2>
+        </a>
+        <ul class="nav nav-pills m-sm-2">
+          <li class="nav-item">
+            <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+          </li>
+          <li class="nav-item">
+            <a href="notes.html" class="nav-link">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a href="flashcard.html" class="nav-link">Flashcards</a>
+          </li>
+          <li class="nav-item">
+            <a href="timetable.html" class="nav-link">Timetable</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <div class="flashcard">
+      <div class="add-flashcard-con">
+        <button id="add-flashcard">Add Flashcard</button>
+      </div>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>flashcard</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="assets/css/custom-flashcard.css" />
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+      <!-- Display Card of Question And Answers Here -->
+      <div id="card-con">
+        <div class="card-list-container"></div>
+      </div>
+    </div>
 
-<body>
-	<nav class="navbar navbar-expand-sm justify-content-center">
-		<ul class="navbar-nav">
-			<li class="nav-item px-5">
-				<a class="nav-link" href="pomodoro.html">Pomodoro</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" id="active" href="flashcard.html">Flashcards</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="timetable.html">Timetable</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="notes.html">Notes</a>
-			</li>
-			<li class="nav-item px-5">
-				<a class="nav-link" href="ambience.html">Ambience</a>
-			</li>
-		</ul>
-	</nav>
-</body>
+    <!-- Input form for users to fill question and answer -->
+    <div class="question-container hide" id="add-question-card">
+      <h2>Add Flashcard</h2>
+      <div class="wrapper">
+        <!-- Error message -->
+        <div class="error-con">
+          <span class="hide" id="error">Input fields cannot be empty!</span>
+        </div>
+        <!-- Close Button -->
+        <i class="fa-solid fa-xmark" id="close-btn"></i>
+      </div>
+
+      <label for="question">Question:</label>
+      <textarea
+        class="input"
+        id="question"
+        placeholder="Type the question here..."
+        rows="2"
+      ></textarea>
+      <label for="answer">Answer:</label>
+      <textarea
+        class="input"
+        id="answer"
+        rows="4"
+        placeholder="Type the answer here..."
+      ></textarea>
+      <button id="save-btn">Save</button>
+    </div>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/flashcard.js"></script>
+  </body>
 </html>
