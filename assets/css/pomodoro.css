@@ -27,10 +27,6 @@ header {
 }
 body {
   background-color: #f8efe6;
-  /*background-image: url("tumblr_bb52491bb4001d07c4f7542c44649f8a_8439d312_540.gif");*/
-  background-repeat: no-repeat;
-  overflow-y: hidden;
-  overflow-x: hidden;
   margin: 0;
 }
 #logo {
@@ -64,14 +60,12 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 10px;
-
 }
 
 #short-btn,
 #long-btn {
   margin-left: 50px;
 }
-
 
 @media screen and (max-width: 1535px) {
   .middle {
