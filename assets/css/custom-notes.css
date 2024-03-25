@@ -1,13 +1,16 @@
 header {
   background-color: #f8efe6;
 }
+
 #header-name {
   color: #6c462d;
   transition: all 0.8s ease 0s;
 }
+
 #header-name:hover {
   font-size: 40px;
 }
+
 .nav-link {
   color: #6c462d;
   margin-left: 8px;
@@ -15,6 +18,7 @@ header {
   border-radius: 6px;
   transition: all 0.8s ease 0s;
 }
+
 .nav-link:hover {
   color: #f5f0ee;
   background-color: #6c462d;
@@ -22,25 +26,52 @@ header {
   font-size: 18px;
   font-weight: 600;
 }
-#inca {
-  padding-right: 80px;
-}
+
 body {
   background-color: #f8efe6;
-  /*background-image: url("tumblr_bb52491bb4001d07c4f7542c44649f8a_8439d312_540.gif");*/
-  background-repeat: no-repeat;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  margin: 0;
+  margin: auto
 }
-#logo {
-  padding-top: 80px;
-  width: 15%;
-  padding-bottom: 15px;
+
+#notes {
+  margin-top: 30px;
 }
-.inca-intro {
-  padding-left: 200px;
-  padding-right: 200px;
-  text-indent: 50px;
-  text-align: justify;
+
+h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
+
+.card-title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+#addbtn {
+  background-color: #6c462d; 
+  border-color: #6c462d;
+}
+
+#addbtn:hover {
+  background-color: #9f7554; 
+  border-color: #9f7554;
+}
+
+#clrbtn {
+  background-color: #6c462d; 
+  border-color: #6c462d;
+}
+
+#clrbtn:hover {
+  background-color: #9f7554; 
+  border-color: #9f7554;
+}
+
+
