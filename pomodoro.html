@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/pomodoro.css" />
     <script src="assets/js/script.js"></script>
   </head>
 
@@ -37,44 +37,76 @@
       </header>
     </div>
     <section class="content">
-      
-          </div>
-        </div>
+      <div class="left">
+        <script>
+          let minutes,
+            seconds,
+            interval,
+            paused = false;
+          minutes = 25;
+          seconds = 0;
 
-        <script type="text/javascript">
-          $(".txtb").on("keyup", function (e) {
-            if (e.keyCode == 13 && $(".txtb").val() != "") {
-              var task = $("<div class='task'></div>").text($(".txtb").val());
-
-              var del = $("<i class='fas fa-trash-alt'></div>").click(
-                function () {
-                  var p = $(this).parent();
-                  p.fadeOut(function () {
-                    p.remove();
-                  });
+          function startTimer() {
+            interval = setInterval(() => {
+              if (!paused) {
+                if (seconds === 0) {
+                  if (minutes === 0) {
+                    clearInterval(interval);
+                    return;
+                  }
+                  minutes--;
+                  seconds = 59;
+                } else {
+                  seconds--;
                 }
-              );
+                updateDisplay();
+              }
+            }, 1000);
+          }
 
-              var check = $("<i class='fas fa-check'></div>").click(
-                function () {
-                  var p = $(this).parent();
-                  p.fadeOut(function () {
-                    $(".comp").append(p);
-                    p.fadeIn();
-                  });
-                  $(this).remove();
-                }
-              );
+          function pauseTimer() {
+            paused = !paused;
+          }
 
-              task.append(del, check);
-              $(".notcomp").append(task);
+          function stopTimer() {
+            clearInterval(interval);
+            minutes = 25;
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+          }
 
-              $(".txtb").val("");
-            }
-          });
+          function startShortBreak() {
+            clearInterval(interval);
+            minutes = 5; // 5 minutes short break
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+            startTimer();
+          }
+
+          function startLongBreak() {
+            clearInterval(interval);
+            minutes = 10; // 10 minutes long break
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+            startTimer();
+          }
+
+          function updateDisplay() {
+            document.getElementById("timer").textContent = `${minutes
+              .toString()
+              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          }
         </script>
+        <div id="timer">25:00</div>
+        <button id="start-btn" onclick="startTimer()">Start</button>
+        <button id="pause-btn" onclick="pauseTimer()">Pause</button>
+        <button id="stop-btn" onclick="stopTimer()">Stop</button>
+        <button id="short-btn" onclick="startShortBreak()">Short Break</button>
+        <button id="long-btn" onclick="startLongBreak()">Long Break</button>
       </div>
-
       <div class="middle">
         <img src="assets/image.PNG" alt="library sketch" class="illustration" />
       </div>
