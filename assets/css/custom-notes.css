@@ -41,11 +41,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.card-title {
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-
 .form-group {
   margin-bottom: 20px;
 }
@@ -60,8 +55,8 @@ h1 {
 }
 
 #addbtn:hover {
-  background-color: #9f7554; 
-  border-color: #9f7554;
+  background-color: #69d6c6; 
+  border-color: #69d6c6;
 }
 
 #clrbtn {
@@ -70,8 +65,65 @@ h1 {
 }
 
 #clrbtn:hover {
-  background-color: #9f7554; 
-  border-color: #9f7554;
+  background-color: #ff4141; 
+  border-color: #ff4141;
 }
 
+.btn-primary {
+  background-color: #6c462d; 
+  border-color: #6c462d;
+}
 
+.btn-primary:hover {
+  background-color: #ff4141; 
+  border-color: #ff4141;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.card-body {
+  background-color: bisque;
+}
+
+#titleInput {
+  background-color: ;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.notecard {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  color: white;
+}
