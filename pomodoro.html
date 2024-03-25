@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/pomodoro.css" />
     <script src="assets/js/script.js"></script>
   </head>
 
@@ -38,13 +38,6 @@
     </div>
     <section class="content">
       <div class="left">
-        <div id="timer">25:00</div>
-        <button id="start-btn" onclick="startTimer()">Start</button>
-        <button id="pause-btn" onclick="pauseTimer()">Pause</button>
-        <button id="stop-btn" onclick="stopTimer()">Stop</button>
-        <button id="short-btn" onclick="startShortBreak()">Short Break</button>
-        <button id="long-btn" onclick="startLongBreak()">Long Break</button>
-
         <script>
           let minutes,
             seconds,
@@ -107,6 +100,12 @@
               .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
           }
         </script>
+        <div id="timer">25:00</div>
+        <button id="start-btn" onclick="startTimer()">Start</button>
+        <button id="pause-btn" onclick="pauseTimer()">Pause</button>
+        <button id="stop-btn" onclick="stopTimer()">Stop</button>
+        <button id="short-btn" onclick="startShortBreak()">Short Break</button>
+        <button id="long-btn" onclick="startLongBreak()">Long Break</button>
       </div>
       <div class="middle">
         <img src="assets/image.PNG" alt="library sketch" class="illustration" />
