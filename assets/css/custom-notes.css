@@ -56,4 +56,24 @@ h1 {
   border-radius: 5px;
 }
 
+#addbtn {
+  background-color: #6c462d; 
+  border-color: #6c462d;
+}
+
+#addbtn:hover {
+  background-color: #9f7554; 
+  border-color: #9f7554;
+}
+
+#clrbtn {
+  background-color: #6c462d; 
+  border-color: #6c462d;
+}
+
+#clrbtn:hover {
+  background-color: #9f7554; 
+  border-color: #9f7554;
+}
+
 
