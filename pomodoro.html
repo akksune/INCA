@@ -1,26 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodoro</title>
-    <link rel="stylesheet" href="assets/css/pomodoro.css">
-    <script src="assets/js/pomodoro.js"></script>
-</head>
-<body>
-    <header>
-        <ul>
-            <li><a href="pomodoro.html">Pomodoro</a></li>    
-            <li><a href="pomodoro.html">Flashcards</a></li>
-            <li><a href="pomodoro.html">Timetable</a></li>
-            <li><a href="pomodoro.html">Notes</a></li>
-            <li><a href="pomodoro.html">Ambience</a></li>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/pomodoro.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header
+        class="d-flex flex-md-row flex-wrap justify-content-center border-bottom"
+      >
+        <a
+          href="index.html"
+          class="d-flex align-items-center text-decoration-none me-md-auto"
+        >
+          <h2 id="header-name"><i class="bi bi-bootstrap-fill"></i>INCA</h2>
+        </a>
+        <ul class="nav nav-pills m-sm-2">
+          <li class="nav-item">
+            <a href="pomodoro.html" class="nav-link">Pomodoro</a>
+          </li>
+          <li class="nav-item">
+            <a href="notes.html" class="nav-link">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a href="flashcard.html" class="nav-link">Flashcards</a>
+          </li>
+          <li class="nav-item">
+            <a href="timetable.html" class="nav-link">Timetable</a>
+          </li>
         </ul>
     </header>
-    <div>
-        <p>ur here sa pomodoro</p>
-        <p>tite</p>
-        <p>big tite</p>
-    </div>
-</body>
+    
+    <section class="content">
+      <div class="left">
+        <script>
+          let minutes,
+            seconds,
+            interval,
+            paused = false;
+          minutes = 25;
+          seconds = 0;
+
+          function startTimer() {
+            interval = setInterval(() => {
+              if (!paused) {
+                if (seconds === 0) {
+                  if (minutes === 0) {
+                    clearInterval(interval);
+                    return;
+                  }
+                  minutes--;
+                  seconds = 59;
+                } else {
+                  seconds--;
+                }
+                updateDisplay();
+              }
+            }, 1000);
+          }
+
+          function pauseTimer() {
+            paused = !paused;
+          }
+
+          function stopTimer() {
+            clearInterval(interval);
+            minutes = 25;
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+          }
+
+          function startShortBreak() {
+            clearInterval(interval);
+            minutes = 5; // 5 minutes short break
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+            startTimer();
+          }
+
+          function startLongBreak() {
+            clearInterval(interval);
+            minutes = 10; // 10 minutes long break
+            seconds = 0;
+            paused = false;
+            updateDisplay();
+            startTimer();
+          }
+
+          function updateDisplay() {
+            document.getElementById("timer").textContent = `${minutes
+              .toString()
+              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          }
+        </script>
+
+        <div id="timer">25:00</div>
+        <button id="start-btn" onclick="startTimer()">Start</button>
+        <button id="pause-btn" onclick="pauseTimer()">Pause</button>
+        <button id="stop-btn" onclick="stopTimer()">Stop</button>
+        <br><br>
+        <button id="short-btn" onclick="startShortBreak()">Short Break</button>
+        <button id="long-btn" onclick="startLongBreak()">Long Break</button>
+      </div>
+      <div class="middle">
+          <img
+            src="assets/image.PNG"
+            alt="library sketch"
+            class="illustration"
+          />
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="massPause">
+          <p id="pauseNotice">Pause all &nbsp;</p>
+          <input type="checkbox" id="pauseAll" onclick="pauseAll()" />
+        </div>
+        <div class="audio unpressed">
+          <span>
+            <p>Weather &nbsp;</p>
+            <button id="play-0" onclick="playSound(0)"></button>
+          </span>
+          <audio loop id="0">
+            <source src="assets/rain.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(0, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Nature &nbsp;</p>
+            <button id="play-5" onclick="playSound(5)"></button>
+          </span>
+          <audio loop id="5">
+            <source src="assets/css/bogshbogsgh.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(5, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Forest &nbsp;</p>
+            <button id="play-1" onclick="playSound(1)"></button>
+          </span>
+          <audio loop id="1">
+            <source src="assets/css/Forest.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(1, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Writing On iPad &nbsp;</p>
+            <button id="play-2" onclick="playSound(2)"></button>
+          </span>
+          <audio loop id="2">
+            <source src="assets/ipad.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(2, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Fireplace Crackling &nbsp;</p>
+            <button id="play-3" onclick="playSound(3)"></button>
+          </span>
+          <audio loop id="3">
+            <source src="assets/fireplace.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(3, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+
+        <div class="audio unpressed">
+          <span>
+            <p>Typing on Keyboard &nbsp;</p>
+            <button id="play-4" onclick="playSound(4)"></button>
+          </span>
+          <audio loop id="4">
+            <source src="assets/typing.mp3" type="audio/mpeg" />
+            <p>Your browser doesn't support HTML 5 sounds.</p>
+          </audio>
+          <span>
+            <div class="volume-control" id="vol"></div>
+            <input
+              type="range"
+              onchange="changeVolume(4, this.value)"
+              min="0"
+              max="1"
+              step="0.025"
+              value="0.70"
+              class="vol-control"
+            />
+          </span>
+        </div>
+      </div>
+
+      <div class="parentDiv"> 
+        <img src="assets/imgs/tumblr_bb52491bb4001d07c4f7542c44649f8a_8439d312_540.gif"> 
+          
+        </div> 
+ 
+
+     
+
+    </section>
+  </body>
 </html>

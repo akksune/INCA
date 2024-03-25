@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>flashcard</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/custom-timetable.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Task Scheduler</h1>
+	</header>
+	<main>
+		<div class="task-from">
+			<input type="text" placeholder="Enter task">
+			<select id="priority">
+				<option value="top">Top Priority</option>
+				<option value="middle">Middle Priority</option>
+				<option value="low">Low Priority</option>
+			</select>
+			<input type="date" id="deadline">
+            <button id="add-task">Add Task</button>
+        </div>
+        <div class="task-list" id="task-list">
+        </div>
+        <script src="logic.js"></script>
+		</div>
+	</main>
+</body>
+</html>
