@@ -39,9 +39,8 @@ header {
   padding-top: 200px;
 } 
 
-img {
-  width: 100;
-  height: 100;
+.img {
+  vertical-align: middle;
 }
 
 body {
