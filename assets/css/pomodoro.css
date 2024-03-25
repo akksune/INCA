@@ -1,3 +1,9 @@
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 header {
   background-color: #f8efe6;
 }
@@ -48,6 +54,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.middle {
+  align-items: auto;
+  justify-content: auto;
+}
+
 #timer {
   font-size: 100px;
 }
@@ -69,7 +81,11 @@ body {
 
 #short-btn,
 #long-btn {
-  margin-left: auto;
+  align-content: center;
+}
+
+img {
+  align-items: center;
 }
 
 
