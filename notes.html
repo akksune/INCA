@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/custom-notes.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/custom-notes.css">
+    <style>
+        /* Additional CSS styles for layout options */
+        .card-title {
+            font-size: 1.5rem; /* Increase title font size */
+            color: #333; /* Change title color */
+        }
+
+        .card-text {
+            font-size: 1.1rem; /* Increase text font size */
+            color: #555; /* Change text color */
+            line-height: 1.6; /* Increase line height for better readability */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -51,53 +64,53 @@
        
     </div>
 
-   <script>
+    <script>
+    
+// if user adds notes
+shownotes();
 
-    // if user adds notes
+let addbtn = document.getElementById('addbtn');
+let clrbtn = document.getElementById('clrbtn');
+
+addbtn.addEventListener('click', function (e) {
+    let addtxt = document.getElementById('addtxt');
+    let titleInput = document.getElementById('titleInput');
+    let notes = localStorage.getItem('notes');
+    if (notes == null) {
+        notesobj = [];
+    } else {
+        notesobj = JSON.parse(notes);
+    }
+
+    // Save both title and content
+    let newNote = {
+        title: titleInput.value,
+        content: addtxt.value
+    };
+
+    notesobj.push(newNote);
+    localStorage.setItem('notes', JSON.stringify(notesobj));
+    addtxt.value = "";
+    titleInput.value = ""; // Clear the title input field
     shownotes();
-    
-    let addbtn = document.getElementById('addbtn');
-    let clrbtn = document.getElementById('clrbtn');
-    
-    addbtn.addEventListener('click', function (e) {
-        let addtxt = document.getElementById('addtxt');
-        let titleInput = document.getElementById('titleInput');
-        let notes = localStorage.getItem('notes');
-        if (notes == null) {
-            notesobj = [];
-        } else {
-            notesobj = JSON.parse(notes);
-        }
+});
 
-        // Save both title and content
-        let newNote = {
-            title: titleInput.value,
-            content: addtxt.value
-        };
+clrbtn.addEventListener('click', function (e) {
+    let addtxt = document.getElementById('addtxt');
+    let titleInput = document.getElementById('titleInput');
+    addtxt.value = "";
+    titleInput.value = ""; // Clear the title input field
+});
 
-        notesobj.push(newNote);
-        localStorage.setItem('notes', JSON.stringify(notesobj));
-        addtxt.value = "";
-        titleInput.value = ""; // Clear the title input field
-        shownotes();
-    });
-    
-    clrbtn.addEventListener('click', function (e) {
-        let addtxt = document.getElementById('addtxt');
-        let titleInput = document.getElementById('titleInput');
-        addtxt.value = "";
-        titleInput.value = ""; // Clear the title input field
-    });
-    
-    
-    // Function to generate a random pastel color
+
+// Function to generate a random pastel color
 function generatePastelColor() {
     const hue = Math.floor(Math.random() * 360); // Random hue
     const pastelLightness = Math.floor(Math.random() * 30) + 70; // Random lightness in the range 70-100 for pastel colors
     return `hsl(${hue}, 100%, ${pastelLightness}%)`;
 }
 
-// Update the shownotes function to apply pastel colors
+// Update the shownotes function to apply pastel colors and retrieve saved colors
 function shownotes() {
     let notes = localStorage.getItem('notes');
     if (notes == null) {
@@ -109,13 +122,25 @@ function shownotes() {
     let html = "";
 
     notesobj.forEach(function (element, index) {
-        const pastelColor = generatePastelColor(); // Generate a random pastel color for each note
+        let pastelColor;
+        if (element.color) {
+            // If a color is saved for the note, use that color
+            pastelColor = element.color;
+        } else {
+            // Otherwise, generate a new random pastel color
+            pastelColor = generatePastelColor();
+            // Save the color to the note object
+            element.color = pastelColor;
+            // Update the notes array in local storage
+            localStorage.setItem('notes', JSON.stringify(notesobj));
+        }
+
         html += `
             <div class="notecard card my-2 mx-2" style="width: 18rem; background-color: ${pastelColor};">
                 <div class="card-body">
                     <h5 class="card-title">${element.title}</h5>
                     <p class="card-text">${element.content}</p>
-                    <button id="${index}" class="btn btn-primary" onclick="deletenotes(this.id)">Delete</button>
+                    <button id="${index}" class="btn btn-primary btn-delete" onclick="deletenotes(this.id)">Delete</button>
                 </div>
             </div>`;
     });
@@ -128,36 +153,21 @@ function shownotes() {
     }
 }
 
-    // deleting
-    function deletenotes(index) {
-        let notes = localStorage.getItem('notes');
-    
-        if (notes == null) {
-            notesobj = [];
-        } else {
-            notesobj = JSON.parse(notes);
-        }
-    
-        notesobj.splice(index, 1);
-        localStorage.setItem('notes', JSON.stringify(notesobj));
-        shownotes();
+// deleting
+function deletenotes(index) {
+    let notes = localStorage.getItem('notes');
+
+    if (notes == null) {
+        notesobj = [];
+    } else {
+        notesobj = JSON.parse(notes);
     }
-    
-    let search = document.getElementById('searchtext');
-    
-    search.addEventListener("input", function () {
-        let inputval = search.value;
-        let notecards = document.getElementsByClassName('notecard');
-    
-        Array.from(notecards).forEach(function (element) {
-            let cardtxt = element.getElementsByTagName('p')[0].innerText;
-            if (cardtxt.includes(inputval)) {
-                element.style.display = "block";
-            } else {
-                element.style.display = "none";
-            }
-        });
-    });
+
+    notesobj.splice(index, 1);
+    localStorage.setItem('notes', JSON.stringify(notesobj));
+    shownotes();
+}
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="notes.js"></script>
