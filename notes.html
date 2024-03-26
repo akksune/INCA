@@ -6,23 +6,11 @@
     <title>Notes</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/custom-notes.css">
-    <style>
-        /* Additional CSS styles for layout options */
-        .card-title {
-            font-size: 1.5rem; /* Increase title font size */
-            color: #333; /* Change title color */
-        }
 
-        .card-text {
-            font-size: 1.1rem; /* Increase text font size */
-            color: #555; /* Change text color */
-            line-height: 1.6; /* Increase line height for better readability */
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+
         <header class="d-flex flex-md-row flex-wrap justify-content-center border-bottom">
             <a href="index.html" class="d-flex align-items-center text-decoration-none me-md-auto">
                 <h2 id="header-name"><i class="bi bi-bootstrap-fill"></i>INCA</h2>
@@ -51,6 +39,15 @@
                         <input type="text" class="form-control" placeholder="Title" id="titleInput">
                         <textarea class="form-control" placeholder="Write your note here" id="addtxt" rows="4"></textarea>
                     </div>
+                   
+        <div class="btn-group" role="group" aria-label="Text Formatting">
+            <button type="button" class="btn btn-secondary" onclick="formatText('bold')"><b>B</b></button>
+            <button type="button" class="btn btn-secondary" onclick="formatText('italic')"><i>I</i></button>
+            <button type="button" class="btn btn-secondary" onclick="formatText('underline')"><u>U</u></button>
+            <button type="button" class="btn btn-secondary" onclick="formatText('strikethrough')"><s>S</s></button>
+            <input type="color" id="colorPicker"> 
+        </div>
+
                     <a class="btn btn-primary my-3" id="addbtn">Add note</a>
                     <a class="btn btn-primary my-3" id="clrbtn">Clear</a>
                 </div>
@@ -58,6 +55,9 @@
             <hr>
             <h1>Your notes</h1>
             <hr>
+          
+            <input type="text" class="form-control my-3" id="searchBar" placeholder="Search notes">
+
             <div class="row container-fluid" id="notes">
             </div>
         </div>
@@ -65,7 +65,7 @@
     </div>
 
     <script>
-    
+        
 // if user adds notes
 shownotes();
 

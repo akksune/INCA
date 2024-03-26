@@ -69,16 +69,6 @@ h1 {
   border-color: #ff4141;
 }
 
-.btn-primary {
-  background-color: #6c462d; 
-  border-color: #6c462d;
-}
-
-.btn-primary:hover {
-  background-color: #ff4141; 
-  border-color: #ff4141;
-}
-
 .form-control {
   margin-bottom: 10px;
 }
@@ -92,13 +82,15 @@ h1 {
 }
 
 .btn-delete {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #6c462d; 
+  border-color: #6c462d;
+  color: white;
 }
 
 .btn-delete:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: #ff4141; 
+  border-color: #ff4141;
+  color: white;
 }
 
 .notecard {
@@ -109,21 +101,12 @@ h1 {
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem; 
+  color: #333; 
 }
 
 .card-text {
-  font-size: 1rem;
-}
-
-.btn-delete {
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
-.btn-delete:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
-  color: white;
+  font-size: 1.1rem; 
+  color: #555; 
+  line-height: 1.6; 
 }
