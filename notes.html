@@ -39,15 +39,7 @@
                         <input type="text" class="form-control" placeholder="Title" id="titleInput">
                         <textarea class="form-control" placeholder="Write your note here" id="addtxt" rows="4"></textarea>
                     </div>
-                   
-        <div class="btn-group" role="group" aria-label="Text Formatting">
-            <button type="button" class="btn btn-secondary" onclick="formatText('bold')"><b>B</b></button>
-            <button type="button" class="btn btn-secondary" onclick="formatText('italic')"><i>I</i></button>
-            <button type="button" class="btn btn-secondary" onclick="formatText('underline')"><u>U</u></button>
-            <button type="button" class="btn btn-secondary" onclick="formatText('strikethrough')"><s>S</s></button>
-            <input type="color" id="colorPicker"> 
-        </div>
-
+        
                     <a class="btn btn-primary my-3" id="addbtn">Add note</a>
                     <a class="btn btn-primary my-3" id="clrbtn">Clear</a>
                 </div>
@@ -56,7 +48,7 @@
             <h1>Your notes</h1>
             <hr>
           
-            <input type="text" class="form-control my-3" id="searchBar" placeholder="Search notes">
+            
 
             <div class="row container-fluid" id="notes">
             </div>
@@ -65,7 +57,7 @@
     </div>
 
     <script>
-        
+
 // if user adds notes
 shownotes();
 
@@ -101,6 +93,7 @@ clrbtn.addEventListener('click', function (e) {
     addtxt.value = "";
     titleInput.value = ""; // Clear the title input field
 });
+
 
 
 // Function to generate a random pastel color
@@ -152,6 +145,23 @@ function shownotes() {
         noteselem.innerHTML = `<h6>Nothing to show. Please add notes.</h6>`;
     }
 }
+
+// Search functionality
+document.getElementById('searchBar').addEventListener('input', function() {
+    let searchTerm = this.value.toLowerCase();
+    let notecards = document.querySelectorAll('.notecard');
+    
+    notecards.forEach(function(card) {
+        let title = card.querySelector('.card-title').textContent.toLowerCase();
+        let content = card.querySelector('.card-text').textContent.toLowerCase();
+        
+        if (title.includes(searchTerm) || content.includes(searchTerm)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
 
 // deleting
 function deletenotes(index) {

@@ -29,7 +29,7 @@ header {
 
 body {
   background-color: #f8efe6;
-  margin: auto
+  margin: auto;
 }
 
 #notes {
@@ -50,22 +50,22 @@ h1 {
 }
 
 #addbtn {
-  background-color: #6c462d; 
+  background-color: #6c462d;
   border-color: #6c462d;
 }
 
 #addbtn:hover {
-  background-color: #69d6c6; 
+  background-color: #69d6c6;
   border-color: #69d6c6;
 }
 
 #clrbtn {
-  background-color: #6c462d; 
+  background-color: #6c462d;
   border-color: #6c462d;
 }
 
 #clrbtn:hover {
-  background-color: #ff4141; 
+  background-color: #ff4141;
   border-color: #ff4141;
 }
 
@@ -78,17 +78,17 @@ h1 {
 }
 
 #titleInput {
-  background-color: ;
+  background-color: white; /* Adjust as needed */
 }
 
 .btn-delete {
-  background-color: #6c462d; 
+  background-color: #6c462d;
   border-color: #6c462d;
   color: white;
 }
 
 .btn-delete:hover {
-  background-color: #ff4141; 
+  background-color: #ff4141;
   border-color: #ff4141;
   color: white;
 }
@@ -101,12 +101,13 @@ h1 {
 }
 
 .card-title {
-  font-size: 1.5rem; 
-  color: #333; 
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .card-text {
-  font-size: 1.1rem; 
-  color: #555; 
-  line-height: 1.6; 
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
 }
+
