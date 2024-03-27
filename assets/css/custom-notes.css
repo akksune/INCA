@@ -29,7 +29,7 @@ header {
 
 body {
   background-color: #f8efe6;
-  margin: auto
+  margin: auto;
 }
 
 #notes {
@@ -50,32 +50,22 @@ h1 {
 }
 
 #addbtn {
-  background-color: #6c462d; 
+  background-color: #6c462d;
   border-color: #6c462d;
 }
 
 #addbtn:hover {
-  background-color: #69d6c6; 
+  background-color: #69d6c6;
   border-color: #69d6c6;
 }
 
 #clrbtn {
-  background-color: #6c462d; 
+  background-color: #6c462d;
   border-color: #6c462d;
 }
 
 #clrbtn:hover {
-  background-color: #ff4141; 
-  border-color: #ff4141;
-}
-
-.btn-primary {
-  background-color: #6c462d; 
-  border-color: #6c462d;
-}
-
-.btn-primary:hover {
-  background-color: #ff4141; 
+  background-color: #ff4141;
   border-color: #ff4141;
 }
 
@@ -88,17 +78,19 @@ h1 {
 }
 
 #titleInput {
-  background-color: ;
+  background-color: white; /* Adjust as needed */
 }
 
 .btn-delete {
-  background-color: #dc3545;
-  border-color: #dc3545;
+  background-color: #6c462d;
+  border-color: #6c462d;
+  color: white;
 }
 
 .btn-delete:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
+  background-color: #ff4141;
+  border-color: #ff4141;
+  color: white;
 }
 
 .notecard {
@@ -109,21 +101,13 @@ h1 {
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 .card-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
 }
 
-.btn-delete {
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
-.btn-delete:hover {
-  background-color: #c82333;
-  border-color: #bd2130;
-  color: white;
-}
