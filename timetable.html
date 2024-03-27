@@ -8,76 +8,7 @@
     <link rel="stylesheet" href="assets/css/custom-timetable.css" />
     <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const taskInput = document.getElementById("task");
-        const priorityInput = document.getElementById("priority");
-        const deadlineInput = document.getElementById("deadline");
-        const addTaskButton = document.getElementById("add-task");
-        const taskList = document.getElementById("task-list");
-
-        addTaskButton.addEventListener("click", () => {
-          const task = taskInput.value;
-          const priority = priorityInput.value;
-          const deadline = deadlineInput.value;
-
-          if (task.trim() === "") {
-            alert("Please enter a task.");
-            return; // Exit the function early if the task field is empty
-          }
-          if (deadline === "") {
-            alert("Please select an upcoming date for the deadline.");
-            return; // Exit the function early if there are empty fields
-          }
-
-          const selectedDate = new Date(deadline);
-          const currentDate = new Date();
-
-          if (selectedDate <= currentDate) {
-            alert("Please select an upcoming date for the deadline.");
-            return; // Exit the function early if the deadline is not in the future
-          }
-
-          const taskItem = document.createElement("div");
-          taskItem.classList.add("task");
-          taskItem.innerHTML = `
-      <p>${task}</p>
-      <p>Priority: ${priority}</p>
-      <p>Deadline: ${deadline}</p>
-      <button class="mark-done">Mark Done</button>
-    `;
-
-          taskList.appendChild(taskItem);
-
-          // Clear input fields after adding task
-          taskInput.value = "";
-          priorityInput.value = "top";
-          deadlineInput.value = "";
-        });
-
-        taskList.addEventListener("click", (event) => {
-          const target = event.target;
-          if (target.classList.contains("mark-done")) {
-            const taskItem = target.parentElement;
-            const isDone = taskItem.classList.contains("done");
-
-            if (isDone) {
-              // If task is marked as done, remove "done" class to unmark it
-              taskItem.classList.remove("done");
-              taskItem.style.backgroundColor = "#12332a"; //cahnge color latur
-              target.textContent = "Mark Done"; // Change button text back to "Mark Done"
-              taskList.insertBefore(taskItem, taskList.childNodes[0]); // Move task to top
-            } else {
-              // If task is not marked as done, add "done" class to mark it as done
-              taskItem.classList.add("done");
-              taskItem.style.backgroundColor = "#f8dad0";
-              target.textContent = "Undo"; // Change button text to "Undo"
-              taskList.appendChild(taskItem); // Move task to bottom
-            }
-          }
-        });
-      });
-    </script>
+    <script src="assets/js/timetable.js"></script>
   </head>
   <body>
     <div class="container">
