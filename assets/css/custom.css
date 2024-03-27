@@ -1,5 +1,7 @@
 header {
   background-color: #f8efe6;
+  margin-bottom: 5px;
+  border-bottom: solid;
 }
 #header-name {
   color: #6c462d;

@@ -121,3 +121,52 @@ const disableButtons = (value) => {
     element.disabled = value;
   });
 };
+// Function to save flashcard data to local storage
+const saveFlashcardsToLocal = () => {
+  const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+  const tempQuestion = question.value.trim();
+  const tempAnswer = answer.value.trim();
+
+  if (tempQuestion && tempAnswer) {
+    flashcards.push({ question: tempQuestion, answer: tempAnswer });
+    localStorage.setItem("flashcards", JSON.stringify(flashcards));
+    console.log("Flashcards saved to local storage:", flashcards);
+  } else {
+    console.error("Failed to save flashcards: Question or answer is empty");
+  }
+};
+
+// Add question when user clicks 'Add Flashcard' button
+addQuestion.addEventListener("click", () => {
+  container.classList.add("hide");
+  question.value = "";
+  answer.value = "";
+  addQuestionCard.classList.remove("hide");
+});
+
+// Submit Question
+cardButton.addEventListener("click", () => {
+  tempQuestion = question.value.trim();
+  tempAnswer = answer.value.trim();
+  if (!tempQuestion || !tempAnswer) {
+    errorMessage.classList.remove("hide");
+  } else {
+    container.classList.remove("hide");
+    errorMessage.classList.add("hide");
+    saveFlashcardsToLocal(); // Save flashcard to local storage
+    viewlist();
+    question.value = "";
+    answer.value = "";
+  }
+});
+
+// Load flashcards from local storage when the page loads
+window.addEventListener("load", () => {
+  const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
+  flashcards.forEach((card) => {
+    question.value = card.question;
+    answer.value = card.answer;
+    viewlist(); // Call viewlist to display loaded flashcards
+    saveFlashcardsToLocal(); // Resave flashcards to update local storage
+  });
+});

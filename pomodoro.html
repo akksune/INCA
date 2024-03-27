@@ -45,75 +45,81 @@
       <div class="left">
         <script>
           let minutes,
-            seconds,
-            interval,
-            paused = false;
-          minutes = 25;
-          seconds = 0;
-
+              seconds,
+              interval,
+              paused = false,
+              timerStarted = false;
+      
           function startTimer() {
-            interval = setInterval(() => {
-              if (!paused) {
-                if (seconds === 0) {
-                  if (minutes === 0) {
-                    clearInterval(interval);
-                    return;
-                  }
-                  minutes--;
-                  seconds = 59;
-                } else {
-                  seconds--;
-                }
-                updateDisplay();
+              if (!timerStarted || paused) {
+                  interval = setInterval(() => {
+                      if (!paused) {
+                          if (seconds === 0) {
+                              if (minutes === 0) {
+                                  clearInterval(interval);
+                                  return;
+                              }
+                              minutes--;
+                              seconds = 59;
+                          } else {
+                              seconds--;
+                          }
+                          updateDisplay();
+                      }
+                  }, 1000);
+                  timerStarted = true;
               }
-            }, 1000);
-          }
-
-          function pauseTimer() {
-            paused = !paused;
-          }
-
+          }    
           function stopTimer() {
-            clearInterval(interval);
-            minutes = 25;
-            seconds = 0;
-            paused = false;
-            updateDisplay();
+              clearInterval(interval);
+              paused = false;
+              timerStarted = false;
+              updateDisplay();
           }
-
+      
           function startShortBreak() {
-            clearInterval(interval);
-            minutes = 5; // 5 minutes short break
-            seconds = 0;
-            paused = false;
-            updateDisplay();
-            startTimer();
+              clearInterval(interval);
+              minutes = 5; // 5 minutes short break
+              seconds = 0;
+              paused = false;
+              timerStarted = false;
+              updateDisplay();
           }
-
+      
           function startLongBreak() {
-            clearInterval(interval);
-            minutes = 10; // 10 minutes long break
-            seconds = 0;
-            paused = false;
-            updateDisplay();
-            startTimer();
+              clearInterval(interval);
+              minutes = 10; // 10 minutes long break
+              seconds = 0;
+              paused = false;
+              timerStarted = false;
+              updateDisplay();
           }
-
+      
+          function startPomodoro() {
+              clearInterval(interval);
+              minutes = 25; // 25 minutes Pomodoro
+              seconds = 0;
+              paused = false;
+              timerStarted = false;
+              updateDisplay();
+          }
+      
           function updateDisplay() {
-            document.getElementById("timer").textContent = `${minutes
-              .toString()
-              .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+              document.getElementById("timer").textContent = `${minutes
+                  .toString()
+                  .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
           }
-        </script>
-
-        <div id="timer">25:00</div>
-        <button id="start-btn" onclick="startTimer()">Start</button>
-        <button id="pause-btn" onclick="pauseTimer()">Pause</button>
-        <button id="stop-btn" onclick="stopTimer()">Stop</button>
-        <br><br>
-        <button id="short-btn" onclick="startShortBreak()">Short Break</button>
-        <button id="long-btn" onclick="startLongBreak()">Long Break</button>
-      </div>
+      </script>
+      
+      <div id="timer">00:00</div>
+      <button id="start-btn" onclick="startTimer()">Start</button>
+      <button id="stop-btn" onclick="stopTimer()">Stop</button>
+      <br><br>
+      <button id="pomodoro-btn" onclick="startPomodoro()">Pomodoro</button>
+      <button id="short-btn" onclick="startShortBreak()">Short Break</button>
+      <button id="long-btn" onclick="startLongBreak()">Long Break</button>
+      
+</div>      
       <div class="middle">
           <img
             src="assets/image.PNG"
