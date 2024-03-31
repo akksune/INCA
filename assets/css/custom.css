@@ -1,13 +1,12 @@
-
 header {
-  background-color: #f8efe6;
+  background-color: #ffffff;
   margin-bottom: 5px;
-  border-bottom: solid;
+  border-bottom: #424b54 2px solid;
 }
 #header-name {
-  color: #6c462d;
+  color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold;
+  font-family: nanummyeongjobold,'garamond';
   min-height: 25%;
   max-height: 100%;
 }
@@ -15,7 +14,7 @@ header {
   font-size: 250%;
 }
 .nav-link {
-  color: #6c462d;
+  color: #424b54;
   margin-left:2% ;
   margin-right:2% ;
   border-radius: 6px;
@@ -23,8 +22,8 @@ header {
   font-family: nanumgothic;
 }
 .nav-link:hover {
-  color: #f5f0ee;
-  background-color: #6c462d;
+  color: #424b54;
+  background-color: #93a8ac;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 600;
@@ -32,19 +31,21 @@ header {
 .display-4{
   font-family: nanummyeongjo;
   max-height: 50%;
+  color: #424b54;
 }
 #inca {
   padding-right: 80px;
 }
 body {
-  background-color: #f8efe6;
-  background-repeat: no-repeat;
+  background-color: #ffffff;
   margin: 0;
 }
 #logo {
-  padding-top: 5%;
-  min-width: 7%;
-  max-width: 10%;
+  padding-top: 3%;
+  min-width: 5%;
+  min-height: 5%;
+  max-width: 150%;
+  max-height: 150%;
   padding-bottom: 15px;
 }
 .inca-intro {
@@ -55,14 +56,5 @@ body {
   text-indent: 50px;
   text-align: justify;
   font-family: nanumgothic;
-}
-.nanum-gothic-regular {
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.nanum-myeongjo-regular {
-  font-family: "Nanum Myeongjo", serif;
-  font-weight: 400;
-  font-style: normal;
+  color: #424b54;
 }

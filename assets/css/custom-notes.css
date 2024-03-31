@@ -1,35 +1,36 @@
 header {
-  background-color: #f8efe6;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+  border-bottom: #424b54 2px solid;
 }
-
 #header-name {
-  color: #6c462d;
+  color: #424b54;
   transition: all 0.8s ease 0s;
+  font-family: nanummyeongjobold,'garamond';
+  min-height: 25%;
+  max-height: 100%;
 }
-
 #header-name:hover {
-  font-size: 40px;
+  font-size: 250%;
 }
-
 .nav-link {
-  color: #6c462d;
-  margin-left: 8px;
-  margin-right: 8px;
+  color: #424b54;
+  margin-left:2% ;
+  margin-right:2% ;
   border-radius: 6px;
   transition: all 0.8s ease 0s;
+  font-family: nanumgothic;
 }
-
 .nav-link:hover {
-  color: #f5f0ee;
-  background-color: #6c462d;
+  color: #424b54;
+  background-color: #93a8ac;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 600;
 }
-
 body {
-  background-color: #f8efe6;
-  margin: auto;
+  background-color: #ffffff;
+  margin: 0;
 }
 
 #notes {
