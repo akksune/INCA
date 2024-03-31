@@ -42,17 +42,27 @@
     </div>
 	<div class="d-flex container justify-content-center align-items-center">
 		<main>
-			<div class="task-form">
-			  <input type="text" id="task" placeholder="Enter task.." />
-			  <select id="priority">
-				<option value="top">Top Priority</option>
-				<option value="middle">Middle Priority</option>
-				<option value="low">Less Priority</option>
-			  </select>
-			  <input type="date" id="deadline" />
-			  <button id="add-task">Add Task</button>
-			</div>
-			<div class="task-list" id="task-list"></div>
+      <div class="task-form">
+        <input type="text" id="task" placeholder="Enter task.." />
+        <select id="priority">
+          <option value="top">Top Priority</option>
+          <option value="middle">Middle Priority</option>
+          <option value="low">Less Priority</option>
+        </select>
+        <input type="date" id="deadline-date" />
+        <input type="time" id="deadline-time" />
+        <button id="add-task">Add Task</button>
+      </div>
+      <div class="task-list" id="task-list">
+        <div class="pending-tasks">
+          <h2>Pending Tasks</h2>
+          <div id="pending-task-list"></div>
+        </div>
+        <div class="done-tasks">
+          <h2>Done Tasks</h2>
+          <div id="done-task-list"></div>
+        </div>
+      </div>         
 		  </main>
 		</div>
 	</div>
