@@ -66,6 +66,7 @@ body {
 
 #timer {
   font-size: 100px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #start-btn,
@@ -319,18 +320,13 @@ nav {
   cursor: pointer;
 }
 
-.content {
-  padding: 2em;
-}
 
 .left {
-  position: relative;
   float: left;
   height: 100%;
   width: 30%;
-  margin-left: 2%;
-  display: block;
-  padding: 10px;
+  display: inline;
+  margin-left: 10px;
 }
 
 .middle {
@@ -399,8 +395,9 @@ h3 {
 }
 
 .right {
-  margin-right: 4%;
+  margin-right: 10px;
   float: right;
+
 }
 
 .audio {

@@ -1,7 +1,4 @@
-* {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 500;
-}
+
 header {
   background-color: #f8efe6;
   margin-bottom: 5px;
@@ -10,9 +7,12 @@ header {
 #header-name {
   color: #6c462d;
   transition: all 0.8s ease 0s;
+  font-family: nanummyeongjobold;
+  min-height: 25%;
+  max-height: 100%;
 }
 #header-name:hover {
-  font-size: 40px;
+  font-size: 250%;
 }
 .nav-link {
   color: #6c462d;
@@ -20,6 +20,7 @@ header {
   margin-right: 8px;
   border-radius: 6px;
   transition: all 0.8s ease 0s;
+  font-family: nanumgothic;
 }
 .nav-link:hover {
   color: #f5f0ee;
@@ -28,24 +29,30 @@ header {
   font-size: 18px;
   font-weight: 600;
 }
+.display-4{
+  font-family: nanummyeongjo;
+  max-height: 50%;
+}
 #inca {
   padding-right: 80px;
 }
 body {
   background-color: #f8efe6;
   background-repeat: no-repeat;
-  overflow-y: hidden;
-  overflow-x: hidden;
   margin: 0;
 }
 #logo {
-  padding-top: 80px;
-  width: 15%;
+  padding-top: 5%;
+  min-width: 7%;
+  max-width: 10%;
   padding-bottom: 15px;
 }
 .inca-intro {
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 10%;
+  padding-right: 10%;
+  min-height: 50%;
+  max-height: 75%;
   text-indent: 50px;
   text-align: justify;
+  font-family: nanumgothic;
 }
