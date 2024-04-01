@@ -3,33 +3,30 @@ header {
   margin-bottom: 5px;
   border-bottom: #424b54 2px solid;
 }
-
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold, 'garamond';
+  font-family: nanummyeongjobold,'garamond';
   min-height: 25%;
   max-height: 100%;
 }
-
-#header-name:hover {
+#header-name:hover  {
   font-size: 250%;
 }
-
 .nav-link {
   color: #424b54 !important;
-  margin: 0 2%;
-  border-radius: 6px;
-  transition: all 0.8s ease 0s;
-  font-family: nanumgothic;
+  margin-left:2% !important;
+  margin-right:2% !important;
+  border-radius: 6px !important;
+  transition: all 0.8s ease 0s !important;
+  font-family: nanumgothic !important;
 }
-
 .nav-link:hover {
-  color: #424b54;
-  background-color: #93a8ac;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: 600;
+  color: #424b54 !important;
+  background-color: #93a8ac !important;
+  border-radius: 50px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
 }
 
 body {
