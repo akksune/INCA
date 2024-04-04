@@ -180,10 +180,6 @@ footer {
   padding-bottom: 2%;
 }
 
-.middle {
-  display: none !important;
-}
-
 @media screen and (max-height: 665px) {
   .content {
     padding-top: 0em !important;
@@ -299,15 +295,14 @@ nav {
 
 .middle {
   position: absolute !important;
-  width: 40% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: inline !important;
-  top: 15% !important;
 }
 
 .illustration {
-  width: 70% !important;
+  width: 80% !important;
+  margin-left: 5%;
 }
 
 .text-box {
