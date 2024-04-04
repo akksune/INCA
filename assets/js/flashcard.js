@@ -7,7 +7,8 @@ const answer = document.getElementById("answer");
 const errorMessage = document.getElementById("error");
 const addFlashcardButton = document.getElementById("add-flashcard");
 const closeBtn = document.getElementById("close-btn");
-
+const deleteAllButton = document.getElementById("delete-all-flashcards");
+deleteAllButton.addEventListener("click", deleteAllFlashcards);
 // Function to save flashcard data to local storage
 const saveFlashcardsToLocal = (tempQuestion, tempAnswer) => {
   const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
@@ -115,5 +116,10 @@ function deleteFlashcard(index) {
   const flashcards = JSON.parse(localStorage.getItem("flashcards")) || [];
   flashcards.splice(index, 1); // Remove the flashcard at the specified index
   localStorage.setItem("flashcards", JSON.stringify(flashcards));
+  viewlist(); // Update the flashcard view
+}
+// Function to delete all flashcards
+function deleteAllFlashcards() {
+  localStorage.removeItem("flashcards"); // Remove all flashcards from local storage
   viewlist(); // Update the flashcard view
 }

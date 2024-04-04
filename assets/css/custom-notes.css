@@ -6,7 +6,7 @@ header {
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold,'garamond';
+  font-family: nanummyeongjobold, "garamond";
   min-height: 25%;
   max-height: 100%;
 }
@@ -15,15 +15,15 @@ header {
 }
 .nav-link {
   color: #424b54;
-  margin-left:2% ;
-  margin-right:2% ;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 6px;
   transition: all 0.8s ease 0s;
-  font-family: nanumgothic;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nav-link:hover {
-  color: #9B6A6C;
-  background-color: #E2B4BD;
+  color: #9b6a6c;
+  background-color: #e2b4bd;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 600;
@@ -52,11 +52,11 @@ h1 {
 
 #addbtn {
   background-color: #6c462d;
-  color: #fff; 
-  border: none; 
-  padding: 0.375rem 0.75rem; 
-  font-size: 1rem; 
-  line-height: 1.5; 
+  color: #fff;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out;
 }
@@ -67,11 +67,11 @@ h1 {
 
 #clrbtn {
   background-color: #6c462d;
-  color: #fff; 
-  border: none; 
-  padding: 0.375rem 0.75rem; 
-  font-size: 1rem; 
-  line-height: 1.5; 
+  color: #fff;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out;
 }
@@ -94,11 +94,11 @@ h1 {
 
 .btn-delete {
   background-color: #6c462d;
-  color: #fff; 
-  border: none; 
-  padding: 0.375rem 0.75rem; 
-  font-size: 1rem; 
-  line-height: 1.5; 
+  color: #fff;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out;
 }
@@ -127,13 +127,13 @@ h1 {
 
 .btn-edit {
   background-color: #6c462d;
-  color: #fff; 
-  border: none; 
-  padding: 0.375rem 0.75rem; 
-  font-size: 1rem; 
-  line-height: 1.5; 
+  color: #fff;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
   border-radius: 0.25rem;
-  transition: background-color 0.15s ease-in-out; 
+  transition: background-color 0.15s ease-in-out;
 }
 
 .btn-edit:hover {
@@ -142,6 +142,6 @@ h1 {
 }
 
 .btn-edit:active {
-  background-color: #ffa000; 
+  background-color: #ffa000;
   color: #fff;
 }
