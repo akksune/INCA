@@ -6,7 +6,7 @@ header {
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold, "garamond";
+  font-family: "garamond";
   min-height: 25%;
   max-height: 100%;
 }
@@ -48,8 +48,9 @@ body {
   text-align: justify;
 }
 #taskheader {
-  background-color: #f8dad0;
-  color: #b29a89;
+  background-color: #e2b4bd;
+  font-family: "garamond";
+  color: #424b54;
   text-align: center;
   padding: 1rem 0;
 }
@@ -95,21 +96,21 @@ main {
 }
 
 #task {
-  background-color: #ffe9d7;
+  background-color: #93a8ac;
   border-radius: 15px;
   border: hidden;
   padding: 20px;
 }
 
 #priority {
-  background-color: #ffe9d7;
+  background-color: #93a8ac;
   border-radius: 15px;
   border: hidden;
   padding: 20px;
 }
 
 #deadline {
-  background-color: #ffe9d7;
+  background-color: #93a8ac;
   border-radius: 15px;
   border: hidden;
   width: 180px;
@@ -117,8 +118,14 @@ main {
 }
 
 #add-task {
-  background-color: #ffe9d7;
+  background-color: #93a8ac;
   border-radius: 15px;
   border: hidden;
   padding: 20px;
+}
+.done-tasks,
+.pending-tasks {
+  font-family: "garamond";
+  font-weight: 600;
+  color: #424b54;
 }
