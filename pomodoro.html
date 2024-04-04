@@ -42,71 +42,88 @@
     </header>
       <div class="left">
         <script>
-          let minutes,
-              seconds,
-              interval,
-              paused = false,
-              timerStarted = false;
-      
-          function startTimer() {
-              if (!timerStarted || paused) {
-                  interval = setInterval(() => {
-                      if (!paused) {
-                          if (seconds === 0) {
-                              if (minutes === 0) {
-                                  clearInterval(interval);
-                                  return;
-                              }
-                              minutes--;
-                              seconds = 59;
-                          } else {
-                              seconds--;
-                          }
-                          updateDisplay();
-                      }
-                  }, 1000);
-                  timerStarted = true;
-              }
-          }    
-          function stopTimer() {
-              clearInterval(interval);
-              paused = false;
-              timerStarted = false;
-              updateDisplay();
-          }
-      
-          function startShortBreak() {
-              clearInterval(interval);
-              minutes = 5; // 5 minutes short break
-              seconds = 0;
-              paused = false;
-              timerStarted = false;
-              updateDisplay();
-          }
-      
-          function startLongBreak() {
-              clearInterval(interval);
-              minutes = 10; // 10 minutes long break
-              seconds = 0;
-              paused = false;
-              timerStarted = false;
-              updateDisplay();
-          }
-      
-          function startPomodoro() {
-              clearInterval(interval);
-              minutes = 25; // 25 minutes Pomodoro
-              seconds = 0;
-              paused = false;
-              timerStarted = false;
-              updateDisplay();
-          }
-      
-          function updateDisplay() {
-              document.getElementById("timer").textContent = `${minutes
-                  .toString()
-                  .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-          }
+        let minutes,
+    seconds,
+    interval,
+    paused = false,
+    timerStarted = false;
+
+function startTimer() {
+    if (!timerStarted || paused) {
+        interval = setInterval(() => {
+            if (!paused) {
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(interval);
+                        sendNotification();
+                        return;
+                    }
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+                updateDisplay();
+            }
+        }, 1000);
+        timerStarted = true;
+    }
+}
+
+function stopTimer() {
+    clearInterval(interval);
+    paused = false;
+    timerStarted = false;
+    updateDisplay();
+}
+
+function startShortBreak() {
+    clearInterval(interval);
+    minutes = 5; // 5 minutes short break
+    seconds = 0;
+    paused = false;
+    timerStarted = false;
+    updateDisplay();
+}
+
+function startLongBreak() {
+    clearInterval(interval);
+    minutes = 10; // 10 minutes long break
+    seconds = 0;
+    paused = false;
+    timerStarted = false;
+    updateDisplay();
+}
+
+function startPomodoro() {
+    clearInterval(interval);
+    minutes = 25; // 25 minutes Pomodoro
+    seconds = 0;
+    paused = false;
+    timerStarted = false;
+    updateDisplay();
+}
+
+function updateDisplay() {
+    document.getElementById("timer").textContent = `${Math.floor(minutes)
+        .toString()
+        .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
+function sendNotification() {
+    if (!("Notification" in window)) {
+        console.log("This browser does not support system notifications");
+    } else if (Notification.permission === "granted") {
+        new Notification("Timer finished!");
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+                new Notification("Timer finished!");
+            }
+        });
+    }
+}
+
       </script>
       
       <div id="timer">00:00</div>
