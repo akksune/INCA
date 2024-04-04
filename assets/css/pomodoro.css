@@ -6,7 +6,7 @@ header {
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold,'garamond';
+  font-family: nanummyeongjobold, "garamond";
   min-height: 25%;
   max-height: 100%;
 }
@@ -15,15 +15,15 @@ header {
 }
 .nav-link {
   color: #424b54;
-  margin-left:2% ;
-  margin-right:2% ;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 6px;
   transition: all 0.8s ease 0s;
-  font-family: nanumgothic;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nav-link:hover {
-  color: #9B6A6C;
-  background-color: #E2B4BD;
+  color: #9b6a6c;
+  background-color: #e2b4bd;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 600;
@@ -66,49 +66,48 @@ body {
 
 #timer {
   font-size: 100px;
-  font-family: nanummyeongjobold,'garamond';
+  font-family: nanummyeongjobold, "garamond";
 }
 
 #start-btn,
 #pause-btn,
-#stop-btn{
+#stop-btn {
   width: 30%;
-    background-color: #9bd8cf;
-    text-decoration: none;
-    border-radius: 20%;
-    border-color: transparent;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: auto;
-    padding: 10px;
-    margin-left: auto;
-    font-family: nanumgothic;
+  background-color: #9bd8cf;
+  text-decoration: none;
+  border-radius: 20%;
+  border-color: transparent;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  padding: 10px;
+  margin-left: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
-#short-btn{
+#short-btn {
   font-size: 10%;
 }
 #short-btn,
-#long-btn, 
-#pomodoro-btn{
+#long-btn,
+#pomodoro-btn {
   width: 30%;
-    background-color: #9bd8cf;
-    text-decoration: none;
-    border-radius: 20%;
-    border-color: transparent;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 1%;
-    padding: 10px;
-    margin-left: auto;
-    font-family: nanumgothic;
+  background-color: #9bd8cf;
+  text-decoration: none;
+  border-radius: 20%;
+  border-color: transparent;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 1%;
+  padding: 10px;
+  margin-left: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 #short-btn,
 #long-btn {
   margin-left: 1%;
-  display: inline ;
+  display: inline;
   font-size: 90%;
 }
-
 
 img {
   align-items: center;
@@ -291,7 +290,6 @@ nav {
   cursor: pointer;
 }
 
-
 .left {
   float: left;
   height: 100%;
@@ -366,7 +364,6 @@ h3 {
 
 .right {
   float: right;
-
 }
 
 .audio {

@@ -6,7 +6,7 @@ header {
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold,'garamond';
+  font-family: nanummyeongjobold, "garamond";
   min-height: 25%;
   max-height: 100%;
 }
@@ -15,15 +15,15 @@ header {
 }
 .nav-link {
   color: #424b54;
-  margin-left:2% ;
-  margin-right:2% ;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 6px;
   transition: all 0.8s ease 0s;
-  font-family: nanumgothic;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .nav-link:hover {
-  color: #9B6A6C;
-  background-color: #E2B4BD;
+  color: #9b6a6c;
+  background-color: #e2b4bd;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 600;

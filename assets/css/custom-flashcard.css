@@ -6,24 +6,24 @@ header {
 #header-name {
   color: #424b54;
   transition: all 0.8s ease 0s;
-  font-family: nanummyeongjobold,'garamond';
+  font-family: nanummyeongjobold, "garamond";
   min-height: 25%;
   max-height: 100%;
 }
-#header-name:hover  {
+#header-name:hover {
   font-size: 250%;
 }
 .nav-link {
   color: #424b54 !important;
-  margin-left:2% !important;
-  margin-right:2% !important;
+  margin-left: 2% !important;
+  margin-right: 2% !important;
   border-radius: 6px !important;
   transition: all 0.8s ease 0s !important;
-  font-family: nanumgothic !important;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 .nav-link:hover {
-  color: #9B6A6C !important;
-  background-color: #E2B4BD !important;
+  color: #9b6a6c !important;
+  background-color: #e2b4bd !important;
   border-radius: 50px !important;
   font-size: 18px !important;
   font-weight: 600 !important;
@@ -63,7 +63,7 @@ button {
 #add-flashcard,
 #delete-all-flashcards {
   font-size: 1em;
-  background-color: #ffcccc; 
+  background-color: #ffcccc;
   color: gray;
   padding: 0.8em 1.2em;
   font-weight: 500;
@@ -72,29 +72,26 @@ button {
   margin-right: 0.5em;
 }
 
-
 #save-btn {
   font-size: 1em;
   background-color: gray;
-  color: #ffcccc; 
+  color: #ffcccc;
   padding: 0.8em 1.2em;
   font-weight: 500;
   border-radius: 0.4em;
   transition: background-color 0.3s ease, color 0.3s ease;
-
 }
 
 #save-btn:hover {
-  background-color: #ffbbbb; 
+  background-color: #ffbbbb;
   color: gray;
-  
 }
 
 .add-flashcard-con button:hover,
 #add-flashcard:hover,
 #delete-all-flashcards:hover {
   background-color: gray;
-  color: #ffcccc; 
+  color: #ffcccc;
 }
 
 #card-con {
@@ -133,7 +130,7 @@ button {
 .fa-xmark {
   font-size: 1.4em;
   background-color: gray;
-  color: #ffcccc; 
+  color: #ffcccc;
   height: 1.8em;
   width: 1.8em;
   display: grid;
@@ -144,12 +141,12 @@ button {
 }
 
 .fa-xmark:hover {
-  background-color: #ffcccc; 
+  background-color: #ffcccc;
   color: gray;
 }
 
 .fa-pen-to-square {
-  color: #ffbbbb; 
+  color: #ffbbbb;
 }
 
 label {
@@ -208,7 +205,7 @@ textarea:focus {
 }
 
 .card {
-  background-color: #f9d4d4; 
+  background-color: #f9d4d4;
   box-shadow: 0 0.4em 1.2em rgba(28, 0, 80, 0.08);
   padding: 1.2em;
   border-radius: 0.4em;
@@ -233,7 +230,7 @@ textarea:focus {
 
 .show-hide-btn {
   display: block;
-  background-color: #ffcccc; 
+  background-color: #ffcccc;
   color: gray;
   text-decoration: none;
   text-align: center;
@@ -244,7 +241,7 @@ textarea:focus {
 
 .show-hide-btn:hover {
   background-color: gray;
-  color: #ffcccc; 
+  color: #ffcccc;
 }
 
 .wrapper {
